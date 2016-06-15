@@ -29,15 +29,13 @@ public class ControllerFacade {
     public List<Student> findStudentFirst(String name){
         Query q = em.createNamedQuery("Student.findByFirstname");
         q.setParameter("firstname", name);
-        List<Student> list = q.getResultList();
-        return list;
+        return q.getResultList();
     }
     
     public List<Student> findStudentLast(String name){
         Query q = em.createNamedQuery("Student.findByLastname");
         q.setParameter("lastname", name);
-        List<Student> list = q.getResultList();
-        return list;
+        return q.getResultList();
     }
     
     public int getScore(int id){
